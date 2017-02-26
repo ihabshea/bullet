@@ -1,3 +1,5 @@
+package Main.Objects;
+
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Sound;
@@ -9,15 +11,15 @@ import org.newdawn.slick.geom.Vector2f;
 
 public class Bullet
 {
-	protected Vector2f pos; //A vector (of 2 float points) for the current position of the bullet
-	protected Vector2f dir; //Another one for the direction it's headed
-	protected int lived = 0; //The time (in ms) the bullet has been alive
-	protected boolean active = true; //Whether or not the bullet has been activated
+	private Vector2f pos; //A vector (of 2 float points) for the current position of the bullet
+	private Vector2f dir; //Another one for the direction it's headed
+	private int lived = 0; //The time (in ms) the bullet has been alive
+	private boolean active = true; //Whether or not the bullet has been activated
 	Sound bulletSound; //Sound effect
 	Image BulletS; // The bullet 2D image/sprite
-	protected int MAX_LIFETIME = 2000; //The bullet should disappear after 2 seconds
-	protected int BulletSize = 100; //Size of the bullet, will be useful to detect collisions
-	protected int DAMAGE = 5; //The damage caused by the bullet to the character's HP
+	private int MAX_LIFETIME = 2000; //The bullet should disappear after 2 seconds
+	private int BulletSize = 100; //Size of the bullet, will be useful to detect collisions
+	private int DAMAGE = 5; //The damage caused by the bullet to the character's HP
 	
 	public Bullet ( Vector2f pos, Vector2f dir )
 	{ // A constructor for the bullet object with an initial position and direction
