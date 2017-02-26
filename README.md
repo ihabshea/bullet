@@ -1,2 +1,2 @@
 # bullet
-An implementation for a bullet object build in Java.
+An implementation for a bullet object in Java.
