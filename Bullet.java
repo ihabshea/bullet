@@ -81,8 +81,8 @@ public class Bullet
 	
 	
 	public boolean collideWith ( Vector2f otherPos , int otherB )
-	{ //Did the bullet collide with another one?
-		int dis = (int) otherPos.copy().sub(pos).lengthSquared(); // Subtract the two position vectors of the current bullet and the one it's colliding with
+	{ //Did the bullet collide with another object (ie: an enemy)?
+		int dis = (int) otherPos.copy().sub(pos).lengthSquared(); // Subtract the two position vectors of the current bullet and the object it's colliding with
 		
 		if( dis < ( otherB + currentB ) ) 
 		{ //if the subtracted product of the vectors is less than the sum product, then the two bullets are colliding
