@@ -16,7 +16,7 @@ public class Bullet
 	Sound bulletSound; //Sound effect
 	Image BulletS; // The bullet 2D image/sprite
 	protected int MAX_LIFETIME = 2000; //The bullet should disappear after 2 seconds
-	protected int currentB = 100; //Size of the bullet, will be useful to detect collisions
+	protected int BulletSize = 100; //Size of the bullet, will be useful to detect collisions
 	protected int DAMAGE = 5; //The damage caused by the bullet to the character's HP
 	
 	public Bullet ( Vector2f pos, Vector2f dir )
@@ -80,12 +80,12 @@ public class Bullet
 	}
 	
 	
-	public boolean collideWith ( Vector2f otherPos , int otherB )
+	public boolean collideWith ( Vector2f otherPos , int theObject )
 	{ //Did the bullet collide with another object (ie: an enemy)?
-		int dis = (int) otherPos.copy().sub(pos).lengthSquared(); // Subtract the two position vectors of the current bullet and the object it's colliding with
+		int dis = (int) otherPos.copy().sub(pos).lengthSquared(); // Subtract the two position vectors of the current bullet and the object it's colliding with and then get the length squared
 		
-		if( dis < ( otherB + currentB ) ) 
-		{ //if the subtracted product of the vectors is less than the sum product, then the two bullets are colliding
+		if( dis < ( theObject + BulletSize ) ) 
+		{ //if the length squared of the two vectors is less than the the size of both objects combined, then the two objects are colliding
 			return true;
 		}
 		return false;
